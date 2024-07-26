@@ -19,7 +19,7 @@ export async function fetchRevenue() {
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
 
-    // console.log('Data fetch completed after 3 seconds.');
+   // console.log('Data fetch completed after 3 seconds.', data.rows);
 
     return data.rows;
   } catch (error) {
@@ -141,6 +141,7 @@ export async function fetchInvoicesPages(query: string) {
 }
 
 export async function fetchInvoiceById(id: string) {
+
   try {
     const data = await sql<InvoiceForm>`
       SELECT
